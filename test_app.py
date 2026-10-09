@@ -59,3 +59,8 @@ def test_insufficient_balance(client):
 def test_transaction_not_found(client):
     r = client.get("/transaction/9999")
     assert r.status_code == 404
+
+def test_health(client):
+    r = client.get("/health")
+    assert r.status_code == 200
+    assert r.get_json()["status"] == "ok"
