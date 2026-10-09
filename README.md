@@ -138,4 +138,6 @@ python monitor.py --watch 10   # check every 10 seconds
 
 Results are also appended to `monitor.log`.
 
+![Monitoring demo](docs/monitor-demo.png)
+
 The API will be available at `http://127.0.0.1:5000`.
