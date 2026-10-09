@@ -1,5 +1,7 @@
 # Mock Transactions API with Support Workflow
 
+![CI](https://github.com/devprofile22/transactions-api/actions/workflows/ci.yml/badge.svg?branch=main)
+
 A small REST API that simulates a payment/transaction system, built to
 practice backend development, API testing, and ITIL-based incident
 management.
