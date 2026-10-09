@@ -121,3 +121,13 @@ ITIL structure. Work in progress.
 - Using Postman for manual and automated (scripted) API testing
 - Writing incident tickets with clear issue/impact/root-cause/resolution
 - Applying ITIL concepts: severity, priority, SLA, incident lifecycle
+## Run with Docker
+
+Pull and run the image directly from Docker Hub:
+
+```bash
+docker pull आपका-username/transactions-api
+docker run -p 5000:5000 आपका-username/transactions-api
+```
+
+The API will be available at `http://127.0.0.1:5000`.
