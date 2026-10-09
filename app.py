@@ -73,6 +73,21 @@ def get_account(acc_id):
         return jsonify(error="Account not found"), 404
     return jsonify(dict(row)), 200
 
+@app.route("/health", methods=["GET"])
+def health():
+    try:
+        conn = get_db()
+        conn.execute("SELECT 1")
+        conn.close()
+        return jsonify(status="ok"), 200
+    except Exception:
+        return jsonify(status="error"), 503
+
 if __name__ == "__main__":
     init_db()
     app.run(debug=True, host="0.0.0.0", port=5000)
+
+def test_health(client):
+    r = client.get("/health")
+    assert r.status_code == 200
+    assert r.get_json()["status"] == "ok"
