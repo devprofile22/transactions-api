@@ -104,7 +104,7 @@ ITIL structure. Work in progress.
 | [INC-002](tickets/INC-002.md) | Negative amount accepted | Sev 2 | P2 | Closed |
 | [INC-003](tickets/INC-003.md) | API timeout on GET request | Sev 3 | P3 | Closed |
 | [INC-004](tickets/INC-004.md) | 500 error instead of 404 | Sev 3 | P3 | Closed |
-| INC-005 | Account balance inconsistency | - | - | Pending |
+| [INC-005](tickets/INC-005.md) | Account balance inconsistency | Sev 1 | P1 | Closed |
 
 ### SLA Matrix Used
 
