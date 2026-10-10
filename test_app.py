@@ -79,3 +79,16 @@ def test_not_found_returns_json(client):
     assert r.status_code == 404
     assert r.is_json
     assert r.get_json()["error"] == "Transaction not found"
+
+def test_debit_reduces_balance(client):
+    r = client.post("/transaction", json=valid_body(ref="TXN-D1", amount=500, typ="DEBIT"))
+    assert r.status_code == 201
+    balance = client.get("/account/1").get_json()["balance"]
+    assert balance == 9500.0
+
+
+def test_credit_increases_balance(client):
+    r = client.post("/transaction", json=valid_body(ref="TXN-C1", amount=300, typ="CREDIT"))
+    assert r.status_code == 201
+    balance = client.get("/account/1").get_json()["balance"]
+    assert balance == 10300.0
