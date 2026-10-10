@@ -46,8 +46,6 @@ def create_transaction():
             (data["reference_id"], data["account_id"], data["amount"], data["type"]))
 
         delta = data["amount"] if data["type"] == "CREDIT" else -data["amount"]
-        conn.execute("UPDATE accounts SET balance = balance + ? WHERE account_id=?",
-                     (delta, data["account_id"]))
         conn.commit()
         return jsonify(message="Transaction successful"), 201
 
