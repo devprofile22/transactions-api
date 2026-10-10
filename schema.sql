@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS transactions (
     txn_id           INTEGER PRIMARY KEY AUTOINCREMENT,
     reference_id     TEXT NOT NULL UNIQUE,
     account_id       INTEGER NOT NULL,
-    amount           REAL NOT NULL CHECK (amount > 0),
+    amount           REAL NOT NULL,
     currency         TEXT NOT NULL DEFAULT 'INR',
     type             TEXT NOT NULL CHECK (type IN ('CREDIT','DEBIT')),
     status           TEXT NOT NULL DEFAULT 'PENDING'
