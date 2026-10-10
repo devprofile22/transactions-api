@@ -57,7 +57,7 @@ def create_transaction():
         conn.close()
 
 @app.route("/transaction/<int:txn_id>", methods=["GET"])
-def get_transaction(txn_id):
+def get_transaction(txn_id):   
     conn = get_db()
     row = conn.execute("SELECT * FROM transactions WHERE txn_id=?", (txn_id,)).fetchone()
     conn.close()

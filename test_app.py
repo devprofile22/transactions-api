@@ -1,3 +1,4 @@
+import time
 import pytest
 import app as app_module
 
@@ -64,3 +65,11 @@ def test_health(client):
     r = client.get("/health")
     assert r.status_code == 200
     assert r.get_json()["status"] == "ok"
+
+def test_get_transaction_is_fast(client):
+    client.post("/transaction", json=valid_body())
+    start = time.time()
+    r = client.get("/transaction/1")
+    elapsed = time.time() - start
+    assert r.status_code == 200
+    assert elapsed < 1.0, f"GET took {elapsed:.1f}s, expected under 1s"
