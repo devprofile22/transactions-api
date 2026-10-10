@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 payments.db
 monitor.log
+check_db.py
