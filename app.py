@@ -26,6 +26,7 @@ def create_transaction():
 
     if not isinstance(data["amount"], (int, float)) or data["amount"] <= 0:
         return jsonify(error="Amount must be a positive number"), 400
+    
     if data["type"] not in ("CREDIT", "DEBIT"):
         return jsonify(error="type must be CREDIT or DEBIT"), 400
 
