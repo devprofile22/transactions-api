@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS accounts (
 
 CREATE TABLE IF NOT EXISTS transactions (
     txn_id           INTEGER PRIMARY KEY AUTOINCREMENT,
-    reference_id     TEXT NOT NULL ,
+    reference_id     TEXT NOT NULL UNIQUE,
     account_id       INTEGER NOT NULL,
     amount           REAL NOT NULL CHECK (amount > 0),
     currency         TEXT NOT NULL DEFAULT 'INR',
