@@ -73,3 +73,9 @@ def test_get_transaction_is_fast(client):
     elapsed = time.time() - start
     assert r.status_code == 200
     assert elapsed < 1.0, f"GET took {elapsed:.1f}s, expected under 1s"
+
+def test_not_found_returns_json(client):
+    r = client.get("/transaction/9999")
+    assert r.status_code == 404
+    assert r.is_json
+    assert r.get_json()["error"] == "Transaction not found"

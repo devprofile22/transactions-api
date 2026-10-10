@@ -61,6 +61,8 @@ def get_transaction(txn_id):
     conn = get_db()
     row = conn.execute("SELECT * FROM transactions WHERE txn_id=?", (txn_id,)).fetchone()
     conn.close()
+    if not row:
+        return jsonify(error="Transaction not found"), 404
     return jsonify(dict(row)), 200
 
 @app.route("/account/<int:acc_id>", methods=["GET"])
