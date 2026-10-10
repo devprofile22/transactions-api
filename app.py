@@ -1,4 +1,5 @@
 import sqlite3
+import time
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -58,6 +59,7 @@ def create_transaction():
 
 @app.route("/transaction/<int:txn_id>", methods=["GET"])
 def get_transaction(txn_id):
+    time.sleep(8)    
     conn = get_db()
     row = conn.execute("SELECT * FROM transactions WHERE txn_id=?", (txn_id,)).fetchone()
     conn.close()
