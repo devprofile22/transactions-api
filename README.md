@@ -102,7 +102,7 @@ ITIL structure. Work in progress.
 |---|---|---|---|---|
 | [INC-001](tickets/INC-001.md) | Duplicate transaction processed | Sev 2 | P2 | Closed |
 | [INC-002](tickets/INC-002.md) | Negative amount accepted | Sev 2 | P2 | Closed |
-| INC-003 | API timeout on GET request | - | - | Pending |
+| [INC-003](tickets/INC-003.md) | API timeout on GET request | Sev 3 | P3 | Closed |
 | INC-004 | 500 error instead of 404 | - | - | Pending |
 | INC-005 | Account balance inconsistency | - | - | Pending |
 
